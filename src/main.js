@@ -5,9 +5,27 @@ const profile = require("./routes/routes_profile");
 const liputan = require("./routes/routes_liputan");
 const project = require("./routes/routes_project");
 const respone = require("./helpers/respone");
+const user = require("./routes/routes_user");
+const link = require("./routes/routes_links");
+const addon = require("./routes/routes_addon");
+
+routing.use("/content", addon);
+routing.use("/content/*", (req, res) => {
+  return respone(res, 404, "Alamat URL yang anda masukkan salah");
+});
+
+routing.use("/link", link);
+routing.use("/link/*", (req, res) => {
+  return respone(res, 404, "Alamat URL yang anda masukkan salah");
+});
 
 routing.use("/liputan", liputan);
 routing.use("/liputan/*", (req, res) => {
+  return respone(res, 404, "Alamat URL yang anda masukkan salah");
+});
+
+routing.use("/user", user);
+routing.use("/user/*", (req, res) => {
   return respone(res, 404, "Alamat URL yang anda masukkan salah");
 });
 

@@ -130,10 +130,21 @@ class Project {
           const dataFile = productJSON.map((data) => {
             const object = {
               id: data.id,
+              type_project: data.type_project,
+              genre_project: data.genre_project,
               title_project: data.title_project,
               child_title: data.child_title,
+              year_project: data.year_project,
               place_project: data.place_project,
+              short_desc: data.short_desc,
+              about: data.about,
+              impression_result: data.impression_result,
+              media_result: data.media_result,
+              desc_result: data.desc_result,
               url_image_cover: newLink(data.url_image_cover),
+              url_website: data.url_website,
+              url_video: data.url_video,
+              url_image_original: data.url_image_cover,
             };
             return object;
           });
@@ -160,10 +171,21 @@ class Project {
           const dataFile = productJSON.map((data) => {
             const object = {
               id: data.id,
+              type_project: data.type_project,
+              genre_project: data.genre_project,
               title_project: data.title_project,
               child_title: data.child_title,
+              year_project: data.year_project,
               place_project: data.place_project,
+              short_desc: data.short_desc,
+              about: data.about,
+              impression_result: data.impression_result,
+              media_result: data.media_result,
+              desc_result: data.desc_result,
               url_image_cover: newLink(data.url_image_cover),
+              url_website: data.url_website,
+              url_video: data.url_video,
+              url_image_original: data.url_image_cover,
             };
             return object;
           });
@@ -190,10 +212,21 @@ class Project {
           const dataFile = productJSON.map((data) => {
             const object = {
               id: data.id,
+              type_project: data.type_project,
+              genre_project: data.genre_project,
               title_project: data.title_project,
               child_title: data.child_title,
+              year_project: data.year_project,
               place_project: data.place_project,
+              short_desc: data.short_desc,
+              about: data.about,
+              impression_result: data.impression_result,
+              media_result: data.media_result,
+              desc_result: data.desc_result,
               url_image_cover: newLink(data.url_image_cover),
+              url_website: data.url_website,
+              url_video: data.url_video,
+              url_image_original: data.url_image_cover,
             };
             return object;
           });
@@ -220,10 +253,21 @@ class Project {
           const dataFile = productJSON.map((data) => {
             const object = {
               id: data.id,
+              type_project: data.type_project,
+              genre_project: data.genre_project,
               title_project: data.title_project,
               child_title: data.child_title,
+              year_project: data.year_project,
               place_project: data.place_project,
+              short_desc: data.short_desc,
+              about: data.about,
+              impression_result: data.impression_result,
+              media_result: data.media_result,
+              desc_result: data.desc_result,
               url_image_cover: newLink(data.url_image_cover),
+              url_website: data.url_website,
+              url_video: data.url_video,
+              url_image_original: data.url_image_cover,
             };
             return object;
           });
@@ -250,10 +294,21 @@ class Project {
           const dataFile = productJSON.map((data) => {
             const object = {
               id: data.id,
+              type_project: data.type_project,
+              genre_project: data.genre_project,
               title_project: data.title_project,
               child_title: data.child_title,
+              year_project: data.year_project,
               place_project: data.place_project,
+              short_desc: data.short_desc,
+              about: data.about,
+              impression_result: data.impression_result,
+              media_result: data.media_result,
+              desc_result: data.desc_result,
               url_image_cover: newLink(data.url_image_cover),
+              url_website: data.url_website,
+              url_video: data.url_video,
+              url_image_original: data.url_image_cover,
             };
             return object;
           });
@@ -280,10 +335,21 @@ class Project {
           const dataFile = productJSON.map((data) => {
             const object = {
               id: data.id,
+              type_project: data.type_project,
+              genre_project: data.genre_project,
               title_project: data.title_project,
               child_title: data.child_title,
+              year_project: data.year_project,
               place_project: data.place_project,
+              short_desc: data.short_desc,
+              about: data.about,
+              impression_result: data.impression_result,
+              media_result: data.media_result,
+              desc_result: data.desc_result,
               url_image_cover: newLink(data.url_image_cover),
+              url_website: data.url_website,
+              url_video: data.url_video,
+              url_image_original: data.url_image_cover,
             };
             return object;
           });

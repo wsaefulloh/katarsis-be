@@ -2,10 +2,10 @@ const { orm } = require("../configs/db");
 const { DataTypes, Op, Sequelize } = require("sequelize");
 const newLink = require("../helpers/get-id-link");
 
-class Profiles {
+class Users {
   constructor() {
     this.table = orm.define(
-      "profiles",
+      "users",
       {
         id: {
           type: DataTypes.INTEGER,
@@ -13,19 +13,11 @@ class Profiles {
           autoIncrement: true,
           primaryKey: true,
         },
-        name: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
-        url_image: {
+        username: {
           type: DataTypes.TEXT,
           allowNull: false,
         },
-        url_linkedin: {
-          type: DataTypes.TEXT,
-          allowNull: false,
-        },
-        position: {
+        password: {
           type: DataTypes.TEXT,
           allowNull: false,
         },
@@ -44,18 +36,43 @@ class Profiles {
         })
         .then((res) => {
           const productJSON = res;
-          const dataGenre = productJSON.map((data) => {
+          const dataFile = productJSON.map((data) => {
             const object = {
               id: data.id,
-              name: data.name,
-              url_image: newLink(data.url_image),
-              url_image_original: data.url_image,
-              url_linkedin: data.url_linkedin,
-              position: data.position,
+              username: data.username,
+              password: data.password,
             };
             return object;
           });
-          resolve(dataGenre);
+          resolve(dataFile);
+        })
+        .catch((err) => {
+          console.log(err);
+          reject(err.message);
+        });
+    });
+  }
+
+  GetAuth(id_user) {
+    return new Promise((resolve, reject) => {
+      this.table
+        .findAll({
+          where: {
+            id: `${id_user}`,
+          },
+          order: [["id", "ASC"]],
+        })
+        .then((res) => {
+          const productJSON = res;
+          const dataTheme = productJSON.map((data) => {
+            const object = {
+              id: data.id,
+              username: data.username,
+              password: data.password,
+            };
+            return object;
+          });
+          resolve(dataTheme);
         })
         .catch((err) => {
           console.log(err);
@@ -73,7 +90,7 @@ class Profiles {
           },
         })
         .then((res) => {
-          resolve("Delete genre success");
+          resolve("Delete file success");
         })
         .catch((err) => {
           reject(err.message);
@@ -86,10 +103,8 @@ class Profiles {
       this.table
         .update(
           {
-            name: data.name,
-            url_image: data.url_image,
-            url_linkedin: data.url_linkedin,
-            position: data.position,
+            username: data.username,
+            password: data.password,
           },
           {
             where: {
@@ -98,7 +113,7 @@ class Profiles {
           }
         )
         .then((res) => {
-          resolve("Update genre success");
+          resolve("Update file success");
         })
         .catch((err) => {
           reject(err.message);
@@ -111,7 +126,7 @@ class Profiles {
       this.table
         .create(data)
         .then((res) => {
-          resolve("Add genre success");
+          resolve("Add file success");
         })
         .catch((err) => {
           reject(err.message);
@@ -120,4 +135,4 @@ class Profiles {
   }
 }
 
-module.exports = new Profiles();
+module.exports = new Users();
