@@ -180,8 +180,8 @@ class Addon {
           {
             type: data.type,
             title: data.title,
-            url: data.url,
             url_images: data.url_images,
+            description: data.description,
           },
           {
             where: {

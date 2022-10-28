@@ -14,11 +14,11 @@ class Liputan {
           primaryKey: true,
         },
         name: {
-          type: DataTypes.STRING,
+          type: DataTypes.TEXT,
           allowNull: false,
         },
         url: {
-          type: DataTypes.STRING,
+          type: DataTypes.TEXT,
           allowNull: false,
         },
       },
