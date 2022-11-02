@@ -22,7 +22,7 @@ files.addData = async (req, res) => {
 
 files.removeData = async (req, res) => {
   try {
-    const result = await model.DeleteData(req.params.id_file);
+    const result = await model.DeleteData(req.params.id_project);
     return respone(res, 200, result);
   } catch (error) {
     return respone(res, 500, error);
