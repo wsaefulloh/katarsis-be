@@ -53,40 +53,12 @@ class SubMenu {
     });
   }
 
-  GetAllOriginalIP() {
+  GetbyMenu(name_menu) {
     return new Promise((resolve, reject) => {
       this.table
         .findAll({
           where: {
-            name_menu: "Original IP",
-          },
-          order: [["id", "ASC"]],
-        })
-        .then((res) => {
-          const productJSON = res;
-          const dataGenre = productJSON.map((data) => {
-            const object = {
-              id: data.id,
-              name_submenu: data.name_submenu,
-              name_menu: data.name_menu,
-            };
-            return object;
-          });
-          resolve(dataGenre);
-        })
-        .catch((err) => {
-          console.log(err);
-          reject(err.message);
-        });
-    });
-  }
-
-  GetAllB2B() {
-    return new Promise((resolve, reject) => {
-      this.table
-        .findAll({
-          where: {
-            name_menu: "B2B",
+            name_menu: name_menu,
           },
           order: [["id", "ASC"]],
         })

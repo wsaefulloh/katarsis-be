@@ -8,6 +8,17 @@ const respone = require("./helpers/respone");
 const user = require("./routes/routes_user");
 const link = require("./routes/routes_links");
 const addon = require("./routes/routes_addon");
+const newproject = require("./routes/routes_newproject");
+const submenu = require("./routes/routes_submenu");
+
+routing.use("/submenu", submenu);
+routing.use("/submenu/*", (req, res) => {
+  return respone(res, 404, "Alamat URL yang anda masukkan salah");
+});
+routing.use("/newproject", newproject);
+routing.use("/newproject/*", (req, res) => {
+  return respone(res, 404, "Alamat URL yang anda masukkan salah");
+});
 
 routing.use("/content", addon);
 routing.use("/content/*", (req, res) => {

@@ -1,8 +1,8 @@
-const project = {};
+const submenu = {};
 const model = require("../models/models_submenu");
 const respone = require("../helpers/respone");
 
-project.getAll = async (req, res) => {
+submenu.getAll = async (req, res) => {
   try {
     const result = await model.GetAll();
     return respone(res, 200, result);
@@ -11,30 +11,27 @@ project.getAll = async (req, res) => {
   }
 };
 
-project.getAllB2B = async (req, res) => {
+submenu.getByIDMenu = async (req, res) => {
   try {
-    const result = await model.GetAllB2B();
+    let menu;
+    if (req.params.id_menu == 1) {
+      menu = "Original IP";
+    } else {
+      menu = "Business to Business (B2B)";
+    }
+    const result = await model.GetbyMenu(menu);
     return respone(res, 200, result);
   } catch (error) {
     return respone(res, 500, error);
   }
 };
 
-project.getAllOriginalIP = async (req, res) => {
-  try {
-    const result = await model.GetAllOriginalIP();
-    return respone(res, 200, result);
-  } catch (error) {
-    return respone(res, 500, error);
-  }
-};
-
-project.addData = async (req, res) => {
+submenu.addData = async (req, res) => {
   try {
     const object = await req.body;
     const data = {
-      name_submenu: object.name_submenu,
       name_menu: object.name_menu,
+      name_submenu: object.name_submenu,
     };
     const result = await model.AddData(data);
     return respone(res, 201, result);
@@ -44,13 +41,13 @@ project.addData = async (req, res) => {
   }
 };
 
-project.updateData = async (req, res) => {
+submenu.updateData = async (req, res) => {
   try {
     const object = await req.body;
     const data = {
       id: object.id,
-      name_submenu: object.name_submenu,
       name_menu: object.name_menu,
+      name_submenu: object.name_submenu,
     };
     const result = await model.UpdateData(data);
     return respone(res, 201, result);
@@ -59,13 +56,13 @@ project.updateData = async (req, res) => {
   }
 };
 
-project.removeData = async (req, res) => {
+submenu.removeData = async (req, res) => {
   try {
-    const result = await model.DeleteData(req.params.id_project);
+    const result = await model.DeleteData(req.params.id_submenu);
     return respone(res, 200, result);
   } catch (error) {
     return respone(res, 500, error);
   }
 };
 
-module.exports = project;
+module.exports = submenu;

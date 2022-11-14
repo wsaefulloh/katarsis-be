@@ -76,6 +76,56 @@ addon.getOurTeam = async (req, res) => {
   }
 };
 
+addon.getB2B = async (req, res) => {
+  try {
+    const result = await model.GetB2B();
+    return respone(res, 200, result);
+  } catch (error) {
+    console.log(error);
+    return respone(res, 500, error);
+  }
+};
+
+addon.getOriginalIP = async (req, res) => {
+  try {
+    const result = await model.GetOriginalIP();
+    return respone(res, 200, result);
+  } catch (error) {
+    console.log(error);
+    return respone(res, 500, error);
+  }
+};
+
+addon.getVisi = async (req, res) => {
+  try {
+    const result = await model.GetVisi();
+    return respone(res, 200, result);
+  } catch (error) {
+    console.log(error);
+    return respone(res, 500, error);
+  }
+};
+
+addon.getMission = async (req, res) => {
+  try {
+    const result = await model.GetMission();
+    return respone(res, 200, result);
+  } catch (error) {
+    console.log(error);
+    return respone(res, 500, error);
+  }
+};
+
+addon.getOurTeam = async (req, res) => {
+  try {
+    const result = await model.GetOurTeam();
+    return respone(res, 200, result);
+  } catch (error) {
+    console.log(error);
+    return respone(res, 500, error);
+  }
+};
+
 addon.getWorkflow = async (req, res) => {
   try {
     const result = await model.GetWorkflow();

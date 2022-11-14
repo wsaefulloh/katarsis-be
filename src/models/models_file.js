@@ -1,6 +1,6 @@
 const { orm } = require("../configs/db");
 const { DataTypes, Op, Sequelize } = require("sequelize");
-const project = require("./models_project");
+const project = require("./models_newproject");
 const newLink = require("../helpers/get-id-link");
 
 class File {
@@ -19,7 +19,7 @@ class File {
           allowNull: false,
           onDelete: "CASCADE",
           references: {
-            model: "projects",
+            model: "new_projects",
             key: "id",
           },
         },

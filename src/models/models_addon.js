@@ -156,6 +156,128 @@ class Addon {
     });
   }
 
+  GetVisi() {
+    return new Promise((resolve, reject) => {
+      this.table
+        .findAll({
+          where: {
+            type: "visi-misi",
+            title: "vision",
+          },
+          order: [["id", "ASC"]],
+        })
+        .then((res) => {
+          const productJSON = res;
+          const dataTheme = productJSON.map((data) => {
+            const object = {
+              id: data.id,
+              type: data.type,
+              title: data.title,
+              url_image: newLink(data.url_images),
+              description: data.description,
+            };
+            return object;
+          });
+          resolve(dataTheme);
+        })
+        .catch((err) => {
+          console.log(err);
+          reject(err.message);
+        });
+    });
+  }
+
+  GetMission() {
+    return new Promise((resolve, reject) => {
+      this.table
+        .findAll({
+          where: {
+            type: "visi-misi",
+            title: "mission",
+          },
+          order: [["id", "ASC"]],
+        })
+        .then((res) => {
+          const productJSON = res;
+          const dataTheme = productJSON.map((data) => {
+            const object = {
+              id: data.id,
+              type: data.type,
+              title: data.title,
+              url_image: newLink(data.url_images),
+              description: data.description,
+            };
+            return object;
+          });
+          resolve(dataTheme);
+        })
+        .catch((err) => {
+          console.log(err);
+          reject(err.message);
+        });
+    });
+  }
+
+  GetOriginalIP() {
+    return new Promise((resolve, reject) => {
+      this.table
+        .findAll({
+          where: {
+            type: "Original IP",
+          },
+          order: [["id", "ASC"]],
+        })
+        .then((res) => {
+          const productJSON = res;
+          const dataTheme = productJSON.map((data) => {
+            const object = {
+              id: data.id,
+              type: data.type,
+              title: data.title,
+              url_image: newLink(data.url_images),
+              description: data.description,
+            };
+            return object;
+          });
+          resolve(dataTheme);
+        })
+        .catch((err) => {
+          console.log(err);
+          reject(err.message);
+        });
+    });
+  }
+
+  GetB2B() {
+    return new Promise((resolve, reject) => {
+      this.table
+        .findAll({
+          where: {
+            type: "B2B",
+          },
+          order: [["id", "ASC"]],
+        })
+        .then((res) => {
+          const productJSON = res;
+          const dataTheme = productJSON.map((data) => {
+            const object = {
+              id: data.id,
+              type: data.type,
+              title: data.title,
+              url_image: newLink(data.url_images),
+              description: data.description,
+            };
+            return object;
+          });
+          resolve(dataTheme);
+        })
+        .catch((err) => {
+          console.log(err);
+          reject(err.message);
+        });
+    });
+  }
+
   DeleteData(id_del) {
     return new Promise((resolve, reject) => {
       this.table

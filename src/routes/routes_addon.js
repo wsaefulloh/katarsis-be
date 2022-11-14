@@ -10,6 +10,10 @@ routing.get("/all-process", ctrl.getAllProcess);
 routing.get("/how-we-do-it", ctrl.getHowWeDoIt);
 routing.get("/our-team", ctrl.getOurTeam);
 routing.get("/workflow", ctrl.getWorkflow);
+routing.get("/visi", ctrl.getVisi);
+routing.get("/misi", ctrl.getMission);
+routing.get("/original-ip", ctrl.getOriginalIP);
+routing.get("/b2b", ctrl.getB2B);
 
 //UPDATE --> PUT
 routing.put("/update", ctrl.updateData);
