@@ -95,12 +95,12 @@ class NewProjects {
     });
   }
 
-  GetProjectbyID(id) {
+  GetProjectbyID(id_project) {
     return new Promise((resolve, reject) => {
       this.table
         .findAll({
           where: {
-            id_project: id,
+            id: id_project,
           },
           order: [["id", "DESC"]],
           include: [

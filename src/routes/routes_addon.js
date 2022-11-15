@@ -10,6 +10,7 @@ routing.get("/all-process", ctrl.getAllProcess);
 routing.get("/how-we-do-it", ctrl.getHowWeDoIt);
 routing.get("/our-team", ctrl.getOurTeam);
 routing.get("/workflow", ctrl.getWorkflow);
+routing.get("/process-workflow", ctrl.getProcessWorkflow);
 routing.get("/visi", ctrl.getVisi);
 routing.get("/misi", ctrl.getMission);
 routing.get("/original-ip", ctrl.getOriginalIP);

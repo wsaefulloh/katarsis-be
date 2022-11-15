@@ -116,6 +116,16 @@ addon.getMission = async (req, res) => {
   }
 };
 
+addon.getProcessWorkflow = async (req, res) => {
+  try {
+    const result = await model.GetWorkflowDesc();
+    return respone(res, 200, result);
+  } catch (error) {
+    console.log(error);
+    return respone(res, 500, error);
+  }
+};
+
 addon.getOurTeam = async (req, res) => {
   try {
     const result = await model.GetOurTeam();
