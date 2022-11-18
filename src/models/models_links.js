@@ -65,6 +65,35 @@ class Links {
     });
   }
 
+  GetCTAPartnership() {
+    return new Promise((resolve, reject) => {
+      this.table
+        .findAll({
+          where: {
+            type: "cta_partnership",
+          },
+          order: [["id", "ASC"]],
+        })
+        .then((res) => {
+          const productJSON = res;
+          const dataTheme = productJSON.map((data) => {
+            const object = {
+              id: data.id,
+              type: data.type,
+              title: data.title,
+              url: data.url,
+            };
+            return object;
+          });
+          resolve(dataTheme);
+        })
+        .catch((err) => {
+          console.log(err);
+          reject(err.message);
+        });
+    });
+  }
+
   GetAllLinks() {
     return new Promise((resolve, reject) => {
       this.table

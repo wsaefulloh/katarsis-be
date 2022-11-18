@@ -3,6 +3,7 @@ const routing = express.Router();
 const file = require("./routes/routes_file");
 const profile = require("./routes/routes_profile");
 const liputan = require("./routes/routes_liputan");
+const brands = require("./routes/routes_brands");
 const project = require("./routes/routes_project");
 const respone = require("./helpers/respone");
 const user = require("./routes/routes_user");
@@ -11,6 +12,10 @@ const addon = require("./routes/routes_addon");
 const newproject = require("./routes/routes_newproject");
 const submenu = require("./routes/routes_submenu");
 
+routing.use("/brands", brands);
+routing.use("/brands/*", (req, res) => {
+  return respone(res, 404, "Alamat URL yang anda masukkan salah");
+});
 routing.use("/submenu", submenu);
 routing.use("/submenu/*", (req, res) => {
   return respone(res, 404, "Alamat URL yang anda masukkan salah");

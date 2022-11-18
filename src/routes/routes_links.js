@@ -16,6 +16,7 @@ routing.get("/info", ctrl.getInfo);
 routing.get("/marketing", ctrl.getMarketing);
 routing.get("/partnership", ctrl.getPartnership);
 routing.get("/career", ctrl.getCareer);
+routing.get("/cta-partnership", ctrl.getCTAPartnership);
 
 //UPDATE --> PUT
 routing.put("/update", ctrl.updateData);

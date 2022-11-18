@@ -57,6 +57,16 @@ links.getLinkedin = async (req, res) => {
   }
 };
 
+links.getCTAPartnership = async (req, res) => {
+  try {
+    const result = await model.GetCTAPartnership();
+    return respone(res, 200, result);
+  } catch (error) {
+    console.log(error);
+    return respone(res, 500, error);
+  }
+};
+
 links.getNumber = async (req, res) => {
   try {
     const result = await model.GetNumber();
