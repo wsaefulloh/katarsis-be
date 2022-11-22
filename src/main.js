@@ -11,15 +11,29 @@ const link = require("./routes/routes_links");
 const addon = require("./routes/routes_addon");
 const newproject = require("./routes/routes_newproject");
 const submenu = require("./routes/routes_submenu");
+const departement = require("./routes/routes_departement");
+const job = require("./routes/routes_job");
+
+routing.use("/departement", departement);
+routing.use("/departement/*", (req, res) => {
+  return respone(res, 404, "Alamat URL yang anda masukkan salah");
+});
+
+routing.use("/job", job);
+routing.use("/job/*", (req, res) => {
+  return respone(res, 404, "Alamat URL yang anda masukkan salah");
+});
 
 routing.use("/brands", brands);
 routing.use("/brands/*", (req, res) => {
   return respone(res, 404, "Alamat URL yang anda masukkan salah");
 });
+
 routing.use("/submenu", submenu);
 routing.use("/submenu/*", (req, res) => {
   return respone(res, 404, "Alamat URL yang anda masukkan salah");
 });
+
 routing.use("/newproject", newproject);
 routing.use("/newproject/*", (req, res) => {
   return respone(res, 404, "Alamat URL yang anda masukkan salah");
