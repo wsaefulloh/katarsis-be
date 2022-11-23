@@ -8,6 +8,9 @@ routing.post("/add", ctrl.addData);
 //READ --> GET
 routing.get("/all", ctrl.getAll);
 
+//READ --> GET
+routing.put("/update", ctrl.updateData);
+
 //DELETE --> DELETE
 routing.delete("/del/:id_file", ctrl.removeData);
 

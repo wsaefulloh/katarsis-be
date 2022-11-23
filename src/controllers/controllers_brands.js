@@ -11,6 +11,21 @@ brands.getAll = async (req, res) => {
   }
 };
 
+brands.updateData = async (req, res) => {
+  try {
+    const object = await req.body;
+    const data = {
+      id: object.id,
+      name: object.name,
+      url: object.url,
+    };
+    const result = await model.UpdateData(data);
+    return respone(res, 201, result);
+  } catch (error) {
+    return respone(res, 500, error);
+  }
+};
+
 brands.addData = async (req, res) => {
   try {
     const object = await req.body;

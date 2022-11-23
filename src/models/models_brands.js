@@ -54,6 +54,29 @@ class Brands {
     });
   }
 
+  UpdateData(data) {
+    return new Promise((resolve, reject) => {
+      this.table
+        .update(
+          {
+            name: data.name,
+            url: data.url,
+          },
+          {
+            where: {
+              id: data.id,
+            },
+          }
+        )
+        .then((res) => {
+          resolve("Update file success");
+        })
+        .catch((err) => {
+          reject(err.message);
+        });
+    });
+  }
+
   DeleteData(id_del) {
     return new Promise((resolve, reject) => {
       this.table
