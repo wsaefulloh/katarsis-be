@@ -10,6 +10,9 @@ const PORT = 9001;
 server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
+server.use("/video", (req, res) => {
+  res.sendFile(__dirname + "/public/video_upload/KatarsisVideo.mp4");
+});
 server.use(main);
 
 database.authenticate();

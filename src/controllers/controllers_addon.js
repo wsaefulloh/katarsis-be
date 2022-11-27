@@ -56,6 +56,16 @@ addon.getHowWeDoIt = async (req, res) => {
   }
 };
 
+addon.getStatusCareer = async (req, res) => {
+  try {
+    const result = await model.GetStatusCareer();
+    return respone(res, 200, result);
+  } catch (error) {
+    console.log(error);
+    return respone(res, 500, error);
+  }
+};
+
 addon.getAllProcess = async (req, res) => {
   try {
     const result = await model.GetAllProcess();
