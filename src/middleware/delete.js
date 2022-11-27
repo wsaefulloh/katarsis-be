@@ -10,11 +10,7 @@ const deleteFile = () => {
       return next();
     } catch (err) {
       console.error(err);
-      if (err.errno == -2) {
-        return next();
-      } else {
-        return respone(res, 400, err);
-      }
+      return next();
     }
   };
 };
