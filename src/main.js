@@ -14,6 +14,13 @@ const submenu = require("./routes/routes_submenu");
 const departement = require("./routes/routes_departement");
 const job = require("./routes/routes_job");
 
+const banner = require("./routes/routes_banner");
+
+routing.use("/banner", banner);
+routing.use("/banner/*", (req, res) => {
+  return respone(res, 404, "Alamat URL yang anda masukkan salah");
+});
+
 routing.use("/departement", departement);
 routing.use("/departement/*", (req, res) => {
   return respone(res, 404, "Alamat URL yang anda masukkan salah");
