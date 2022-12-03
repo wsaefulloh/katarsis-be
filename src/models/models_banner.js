@@ -5,7 +5,7 @@ const newLink = require("../helpers/get-id-link");
 class Banner {
   constructor() {
     this.table = orm.define(
-      "departements",
+      "banners",
       {
         id: {
           type: DataTypes.INTEGER,
