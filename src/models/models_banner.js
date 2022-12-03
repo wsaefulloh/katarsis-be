@@ -49,8 +49,8 @@ class Banner {
               id: data.id,
               title_banner: data.title_banner,
               date_banner: data.date_banner,
-              url_image: data.url_image,
-              url_imageOriginal: newLink(data.url_image),
+              url_imageOriginal: data.url_image,
+              url_image: newLink(data.url_image),
               url: data.url,
             };
             return object;
