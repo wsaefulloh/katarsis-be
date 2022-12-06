@@ -10,6 +10,7 @@ banner.addData = async (req, res) => {
       date_banner: object.date_banner,
       url_image: object.url_image,
       url: object.url,
+      button: object.button,
     };
     const result = await model.AddData(data);
     return respone(res, 201, result);
@@ -47,6 +48,7 @@ banner.updateData = async (req, res) => {
       date_banner: object.date_banner,
       url_image: object.url_image,
       url: object.url,
+      button: object.button,
     };
     const result = await model.UpdateData(data);
     return respone(res, 201, result);

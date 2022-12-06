@@ -29,6 +29,10 @@ class Banner {
           type: DataTypes.TEXT,
           allowNull: false,
         },
+        button: {
+          type: DataTypes.TEXT,
+          allowNull: false,
+        },
       },
       {
         timestamps: false,
@@ -52,6 +56,7 @@ class Banner {
               url_imageOriginal: data.url_image,
               url_image: newLink(data.url_image),
               url: data.url,
+              button: data.button,
             };
             return object;
           });
@@ -90,6 +95,7 @@ class Banner {
             date_banner: data.date_banner,
             url_image: data.url_image,
             url: data.url,
+            button: data.button,
           },
           {
             where: {
