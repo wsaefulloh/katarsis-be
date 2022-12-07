@@ -19,7 +19,7 @@ class Banner {
         },
         date_banner: {
           type: DataTypes.TEXT,
-          allowNull: false,
+          allowNull: true,
         },
         url_image: {
           type: DataTypes.TEXT,
